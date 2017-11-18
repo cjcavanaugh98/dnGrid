@@ -4,16 +4,17 @@ body {
 }
 .full-width {
   width: 100%;
-  height: 320px;
 }
+
 .grid-contain {
   display: grid;
   font-size: 30px;
   margin: 0 auto;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 3fr 3fr;
   grid-template-rows: 80px repeat(10, 100px);
   width: 420px;
 }
+
 nav {
   background-color: rgba(0, 0, 0, .6);
   color: #fff;
@@ -40,7 +41,7 @@ section {
   font-style: italic;
   font-weight: 900;
   margin: 50px 0 20px 0;
-  z-index: 1
+  z-index: 1;
 }
 aside {
   grid-column: 1 / 2;
@@ -56,4 +57,47 @@ footer {
   background-color: #aaa;
   grid-column: 1 / 2;
   grid-row: 10 / 11;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-contain {
+    width: 740px;
+    grid-template-columns: 1fr 3fr 3fr 3fr;
+    rid-template-rows: 80px repeat(9, 100px) 40px;
+  }
+  aside {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+  section {
+    grid-column: 1 / 5;
+    grid-row: 3 / 10;
+  }
+  .full-width {
+    width: 100%;
+    display: block;
+  }
+  .headline {
+    grid-column: 2 / 4;
+    grid-row: 6 / 9;
+  }
+  .headline h1, .headline h3 {
+    color: #fff;
+  }
+  .headline h1 {
+    font-size: 75px;
+  }
+  footer {
+    background-color: #ba0c2f;
+    grid-column: 1 / 5;
+    grid-row: 11 / 12;
+    padding: 12px;
+  }
+  footer p, footer a {
+    color: #fff;
+    float: left;
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-left: 5px;
+  }
 }
